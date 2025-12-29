@@ -39,9 +39,10 @@ router.beforeEach(async (to, from, next) => {
     } else {
       // 继续路由跳转
       const homeStore = useHomeStore()
-      console.log(homeStore,"ddddddddddddddduseHomeStore");
       await homeStore.updateCommonSettings();
       await homeStore.updateAllShopData();
+      await homeStore.updateNavigationItems();
+      await homeStore.getShopInfoById();
       next();
     }
   } else {
