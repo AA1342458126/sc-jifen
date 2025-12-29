@@ -15,6 +15,8 @@ export default defineConfig({
         target: 'https://yqzjifennew.jkcrm.cn',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
+        secure: false,
+        cookieDomainRewrite: 'localhost' // 可选：重写 Set-Cookie 的 Domain
       },
     }
   },
